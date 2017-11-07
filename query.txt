@@ -1,0 +1,7 @@
+
+SELECT DISTINCT ct_mark.roll,ct_mark.name,ct_mark.ct1,ct_mark.ct2,ct_mark.ct3, 
+((ct1+ct2+ct3)-LEAST(ct1,ct2,ct3)) as Both_Highest_of_Three, 
+attendence.attenmark , 
+((attendence.attenmark)+((ct1+ct2+ct3)-(LEAST(ct1,ct2,ct3)))) as Obtain_total_0ut_of_30 
+FROM ct_mark,attendence
+ORDER BY ct_mark.roll ASC;
